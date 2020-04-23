@@ -19,27 +19,13 @@ namespace Demo1.ShowTask
 
             // 3
             Task[] tasks = new Task[3];
-            int number = 3;
+            int number = 1;
             for (int i = 0; i < tasks.Length; i++)
             {
                 tasks[i] = Task.Factory.StartNew(() => GetFactorial(number++));
             }
 
-            // 4
-            #region Task Status
-            
-            task = new Task(() => GetFactorial(number));
-            Console.WriteLine($"Status: {task.Status}");
-
-            task.Start();
-            Console.WriteLine($"Status: {task.Status}");
-
-            Thread.Sleep(8000);
-            Console.WriteLine($"Status: {task.Status}");
-
-            #endregion 3
-
-            Console.WriteLine("Useful work...");
+            Console.WriteLine("The end.");
 
             Console.Read();
         }

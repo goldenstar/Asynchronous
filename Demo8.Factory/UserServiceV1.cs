@@ -6,7 +6,16 @@ namespace Demo8.Factory
     {
         public Task<bool> FinishedTrialPeriod(User user)
         {
-            return Task.FromResult(true);
+            bool result = true;
+
+            return Task.FromResult(result);
+        }
+
+        public ValueTask<int> GetFreeDays(User user)
+        {
+            int value = 5;
+
+            return new ValueTask<int>(value);
         }
     }
 }

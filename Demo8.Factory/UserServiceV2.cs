@@ -12,6 +12,15 @@ namespace Demo8.Factory
             return endTrialPeriodDate < DateTime.Now;
         }
 
+        public async ValueTask<int> GetFreeDays(User user)
+        {
+            int value = 5;
+
+            await Task.Delay(300);
+
+            return value;
+        }
+
         private async Task<DateTime> GetEndTrialPeriodDate(User user)
         {
             await Task.Delay(300);

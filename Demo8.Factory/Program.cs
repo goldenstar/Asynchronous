@@ -6,13 +6,25 @@ namespace Demo8.Factory
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            User user = new User
+            {
+                CreatedDate = DateTime.Now,
+            };
 
-            IUserService userService = new UserServiceV1();
-            userService.FinishedTrialPeriod(new User());
+            IUserService userService;
 
-            userService = new UserServiceV2();
-            userService.FinishedTrialPeriod(new User());
+            if (user.CreatedDate.Second % 2 == 0)
+            {
+                userService = new UserServiceV1();
+                userService.FinishedTrialPeriod(user);
+                userService.GetFreeDays(user);
+            }
+            else
+            {
+                userService = new UserServiceV2();
+                userService.FinishedTrialPeriod(user);
+                userService.GetFreeDays(user);
+            }
         }
     }
 }

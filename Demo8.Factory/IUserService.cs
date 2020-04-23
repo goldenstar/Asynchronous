@@ -5,5 +5,7 @@ namespace Demo8.Factory
     public interface IUserService
     {
         Task<bool> FinishedTrialPeriod(User user);
+
+        ValueTask<int> GetFreeDays(User user);
     }
 }

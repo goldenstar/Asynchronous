@@ -12,14 +12,15 @@ namespace Demo7.Deadlock
 
         private async void button_Click(object sender, EventArgs e)
         {
-            StartWorkAsync().GetAwaiter().GetResult();
+            // Ожидаем завершение выполнения асинхронной операции
+            await StartWorkAsync();
 
-            button.Text = "Thank you";
+            button.Text = "Thank you!";
         }
 
         private async Task StartWorkAsync()
         {
-            await Task.Delay(3000);
+            await Task.Delay(1000);
         }
     }
 }

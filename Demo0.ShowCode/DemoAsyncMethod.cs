@@ -16,8 +16,8 @@ namespace Demo0.ShowCode
 
         private async Task<IList<User>> GetAllUsersAsync()
         {
-            Task task = Task.Delay(1000);
-            await task;
+            await Task.Delay(1000);
+
             return new List<User>();
         }
 
